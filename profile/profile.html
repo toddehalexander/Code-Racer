@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7990188983460307"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title> Profile </title>
+    <style>
+        :root {
+            --clr-body-bg: #333;
+            --clr-text: hsl(0, 0%, 100%);
+            --clr-heading: hsl(0 0% 25%);
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Consolas, monaco, monospace;
+            background: var(--clr-body-bg);
+            color: var(--clr-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pink {
+            --clr-body-bg: hsl(310 50% 90%);
+            --clr-card-bg: hsl(310 50% 100%);
+            --clr-text: hsl(310 50% 15%);
+            --clr-heading: hsl(310 50% 25%);
+        }
+
+        .blue {
+            --clr-body-bg: hsl(209 50% 90%);
+            --clr-card-bg: hsl(209 50% 100%);
+            --clr-text: hsl(209 50% 15%);
+            --clr-heading: hsl(209 50% 25%);
+        }
+
+        .green {
+            --clr-body-bg: hsl(109 50% 90%);
+            --clr-card-bg: hsl(109 50% 100%);
+            --clr-text: hsl(109 50% 15%);
+            --clr-heading: hsl(109 50% 25%);
+        }
+
+        :root:has(#pink:checked) {
+            --clr-body-bg: hsl(310 50% 90%);
+            --clr-card-bg: hsl(310 50% 100%);
+            --clr-text: hsl(310 50% 15%);
+            --clr-heading: hsl(310 50% 25%);
+        }
+
+        :root:has(#blue:checked) {
+            --clr-body-bg: hsl(209 50% 90%);
+            --clr-card-bg: hsl(209 50% 100%);
+            --clr-text: hsl(209 50% 15%);
+            --clr-heading: hsl(209 50% 25%);
+            --clr-body-bg2: hsl(210, 57%, 78%);
+        }
+        
+
+        :root:has(#green:checked) {
+            --clr-body-bg: hsl(109 50% 90%);
+            --clr-card-bg: hsl(109 50% 100%);
+            --clr-text: hsl(109 50% 15%);
+            --clr-heading: hsl(109 50% 25%);
+        }
+
+        .btn-outline-primary {
+            font-family: Consolas, monaco, monospace;
+            --bs-btn-color: var(--clr-text);
+            --bs-btn-border-color: var(--clr-heading);
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: var(--clr-heading);
+            --bs-btn-hover-border-color: var(--clr-heading);
+            --bs-btn-focus-shadow-rgb: var(--clr-heading);
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: var(--clr-heading);
+            --bs-btn-active-border-color: var(--clr-heading);
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: var(--clr-heading);
+            --bs-btn-disabled-bg: transparent;
+            --bs-btn-disabled-border-color: var(--clr-heading);
+            --bs-gradient: none;
+        }
+
+        #header {
+            height: 10%;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--clr-heading);
+        }
+
+        .typewriter h1 {
+            color: #fff;
+            font-family: monospace;
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange;
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em;
+            /* Adjust as needed */
+            animation:
+                typing 7.5s steps(30, end) infinite,
+                blink-caret .5s step-end infinite;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            0% {
+                width: 0%
+            }
+
+            25% {
+                width: 100%
+            }
+
+            50% {
+                width: 100%
+            }
+
+            75% {
+                width: 0%
+            }
+
+            100% {
+                width: 0%
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange
+            }
+        }
+
+        #mainContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            min-height: fit-content;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        #username {
+            background: var(--clr-heading);
+            padding-left: 1%;
+            padding-right: 1%;
+            border-radius: 25px;
+            border: 1px solid var(--clr-text);
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #username>h2 {
+            color: whitesmoke;
+        }
+
+        #stats {
+            height: 15vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 25px;
+        }
+
+        #top,
+        #bottom,
+        #chart-bg {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--clr-heading);
+            border-radius: 25px;
+            border: 1px solid var(--clr-text);
+            padding: 1%;
+        }
+
+        #top>div,
+        #bottom>div {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: space-between;
+            color: whitesmoke;
+        }
+
+        #stats>div>div>h3 {
+            margin: 2%;
+            font-size: 1.2rem;
+        }
+
+        #chart-bg {
+            height: 35%;
+            width: 35%;
+            height: fit-content;
+            margin: 2%;
+        }
+
+        #sign-out-button {
+            padding: 1%;
+            width: 10%;
+            background: var(--clr-heading);
+            color: whitesmoke;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        #sign-out-button:hover {
+            filter: brightness(0.8);
+        }
+
+        #sign-out-button:active {
+            filter: brightness(0.6);
+        }
+
+        #footer {
+            height: 10%;
+            width: 100%;
+            background: var(--clr-heading)
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <div id="logoname" style="cursor: pointer;">
+            <div class="typewriter">
+                <h1>Code Racer</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent">
+        <div id="username">
+            <h2 id="name_h2">Username</h2>
+        </div>
+
+        <div id="stats">
+            <div id="top">
+                <div id="average_wpm">
+                    <h3>Average Words Per Minute: </h3>
+                    <h3 id='average_wpm_h3'>0</h3>
+
+                </div>
+
+                <div id="average_cpm">
+                    <h3>Average Characters Per Minute: </h3>
+                    <h3 id="average_cpm_h3">0</h3>
+
+                </div>
+
+                <div id="lifetime_accuracy">
+                    <h3>Lifetime Accuracy: </h3>
+                    <h3 id="lifetime_accuracy_h3">0</h3>
+
+                </div>
+            </div>
+
+            <div id="bottom">
+                <div id="total_words_typed">
+                    <h3>Total Words Typed: </h3>
+                    <h3 id="total_words_typed_h3">0</h3>
+
+                </div>
+
+                <div id="total_characters_typed">
+                    <h3>Total Characters Typed: </h3>
+                    <h3 id="total_characters_typed_h3">0</h3>
+
+                </div>
+
+                <div id="total_time_spent_typing">
+                    <h3>Total Time Spent Typing: </h3>
+                    <h3 id="time_spend_typing_h3">0</h3>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="chart-bg">
+            <canvas id="myChart" style="width:100%;"></canvas>
+        </div>
+        <button id="sign-out-button">Sign Out</button>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCfqETPecXz44bqT_d5hgQAFbejf4isfIk",
+            authDomain: "coderacer-4d354.firebaseapp.com",
+            databaseURL: "https://coderacer-4d354-default-rtdb.firebaseio.com",
+            projectId: "coderacer-4d354",
+            storageBucket: "coderacer-4d354.appspot.com",
+            messagingSenderId: "300760585108",
+            appId: "1:300760585108:web:f1841e34b255daf97fb581"
+        };
+
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, child, get, update }
+            from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
+        const db = getDatabase();
+
+        // Gets the user's username that's stored in the local or session storage
+
+        var currentuser = null;
+
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes") {
+            currentuser = JSON.parse(localStorage.getItem('user'));
+        }
+        else {
+            currentuser = JSON.parse(sessionStorage.getItem('user'));
+        }
+
+        // Displaying all of the user statistics in the tables
+        function AddItemToTable(total_words_typed, total_characters_typed, avg_WPM, avg_CPM,
+            lifetime_accuracy, total_time_spent_typing) {
+
+            // Convert total time spent typing to Hours/Minutes/Seconds
+            let hours = Math.floor(total_time_spent_typing / 3600);
+            total_time_spent_typing = total_time_spent_typing % 3600;
+            let minutes = Math.floor(total_time_spent_typing / 60);
+            let seconds = Math.floor(total_time_spent_typing % 60);
+
+            document.getElementById("time_spend_typing_h3").innerText = hours + "h " + minutes + "m " + seconds + "s";
+            document.getElementById("average_wpm_h3").innerText = avg_WPM;
+            document.getElementById("lifetime_accuracy_h3").innerText = lifetime_accuracy + " %";
+            document.getElementById("total_words_typed_h3").innerText = total_words_typed;
+            document.getElementById("total_characters_typed_h3").innerText = total_characters_typed;
+            document.getElementById("average_cpm_h3").innerText = avg_CPM;
+        }
+
+        function AddAllItemsToProfile(UsersList) {
+            var users = [];
+
+            // Inital state of data from Firebase
+
+            UsersList.forEach(element => {
+                AddItemToTable(element.total_words_typed, element.total_characters_typed, element.avg_WPM, element.avg_CPM,
+                    element.lifetime_accuracy, element.total_time_spent_typing)
+            });
+        }
+
+        // Getting all of the data from Firebase at once
+
+        function GetAllDataOnce() {
+            const dbRef = ref(db);
+            var users = [];
+
+            get(child(dbRef, 'UsersList/' + currentuser.username)).then((snapshot) => {
+                users.push(snapshot.val());
+                AddAllItemsToProfile(users);
+            })
+        }
+
+        window.onload = GetAllDataOnce();
+
+        // Updates the database after the graph is updated
+
+        function updateGraph() {
+            // Database reference
+
+            const dbRef = ref(db);
+
+            // Updates the data points for the graph for WPM
+
+            get(child(dbRef, "UsersList/" + currentuser.username)).then((snapshot) => {
+
+                // Gets the avg_WPM from the database
+
+                var retrieved_avg_WPM = snapshot.val().avg_WPM;
+
+                // Getting all of the data points individually from the database
+
+                var retrieved_data_point_1 = snapshot.val().data_point_1;
+                var retrieved_data_point_2 = snapshot.val().data_point_2;
+                var retrieved_data_point_3 = snapshot.val().data_point_3;
+                var retrieved_data_point_4 = snapshot.val().data_point_4;
+                var retrieved_data_point_5 = snapshot.val().data_point_5;
+                var retrieved_data_point_6 = snapshot.val().data_point_6;
+                var retrieved_data_point_7 = snapshot.val().data_point_7;
+                var retrieved_data_point_8 = snapshot.val().data_point_8;
+                var retrieved_data_point_9 = snapshot.val().data_point_9;
+                var retrieved_data_point_10 = snapshot.val().data_point_10;
+
+                // Code for the line graph
+
+                const xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                const yValues = [retrieved_data_point_1, retrieved_data_point_2,
+                retrieved_data_point_3, retrieved_data_point_4, 
+                retrieved_data_point_5, retrieved_data_point_6, 
+                retrieved_data_point_7, retrieved_data_point_8,
+                retrieved_data_point_9, retrieved_data_point_10];
+
+                const myChart = new Chart("myChart", {
+                    type: "line",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                            borderColor: "whitesmoke",
+                            data: yValues,
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false,
+                        },
+                        responsive: true,
+                        title: {
+                            display: true,
+                            text: 'Words Per Minute Graph',
+                            fontColor: "whitesmoke"
+                        },
+                        tooltips: {
+                            mode: 'label',
+                        },
+                        hover: {
+                            mode: 'nearest',
+                            intersect: true
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                gridLines: {
+                                    display: true,
+                                    color: "whitesmoke"
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Previous Attempts (1 = Latest, 10 = Most Recent)',
+                                    fontColor: "whitesmoke"
+                                },
+                                ticks: {
+                                    fontColor: "whitesmoke"
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                gridLines: {
+                                    display: true,
+                                    color: "whitesmoke"
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'WPM',
+                                    fontColor: "whitesmoke"
+                                },
+                                ticks: {
+                                    fontColor: "whitesmoke"
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
+        }
+
+        window.onload = updateGraph();
+
+        // THEMES
+        const colorThemes = document.querySelectorAll('[name="theme"]');
+
+        // store theme
+        const storeTheme = function (theme) {
+            localStorage.setItem("theme", theme);
+        };
+
+        // set theme when visitor returns
+        const setTheme = function () {
+            const activeTheme = localStorage.getItem("theme");
+            colorThemes.forEach((themeOption) => {
+                if (themeOption.id === activeTheme) {
+                    themeOption.checked = true;
+                }
+            });
+            // fallback for no :has() support
+            document.documentElement.className = activeTheme;
+        };
+
+        colorThemes.forEach((themeOption) => {
+            themeOption.addEventListener("click", () => {
+                storeTheme(themeOption.id);
+                // fallback for no :has() support
+                document.documentElement.className = themeOption.id;
+            });
+        });
+
+        document.onload = setTheme();
+
+        // References
+
+        let userlink = document.getElementById('name_h2');
+        let signoutlink = document.getElementById('signoutlink');
+        var currentuser = null;
+
+        // Gets the username and checks to see if the user wants to be kept logged in or not
+
+        function getUsername() {
+            let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+            if (keepLoggedIn == "yes") {
+                currentuser = JSON.parse(localStorage.getItem('user'));
+            }
+            else {
+                currentuser = JSON.parse(sessionStorage.getItem('user'));
+            }
+        }
+
+        // When the "signOut" function gets called, the user is logged out and is redirected to the homepage
+
+        function signOut() {
+            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
+            localStorage.removeItem('keepLoggedIn');
+            window.location = "/index.html";
+        }
+
+        // Loads Windows
+
+        // If the user is signed in, it will display the username and the signout button on the top right-hand corner of the page
+        // Once the person presses "Sign Out", it will redirect them to the homepage
+        window.onload = function () {
+            getUsername();
+            if (currentuser != null) {
+                userlink.innerText = currentuser.username;
+                userlink.classList.replace("btn", "nav-link");
+                userlink.classList.add("btn-primary");
+                userlink.href = "#";
+
+                signoutlink.innerText = "Sign Out";
+                signoutlink.classList.replace("btn", "nav-link");
+                signoutlink.classList.add("btn-success");
+                signoutlink.href = "javascript:signOut()";
+            }
+            else {
+                signoutlink.innerText = "Sign Out";
+                signoutlink.classList.replace("btn", "nav-link");
+                signoutlink.classList.add("btn-success");
+                signoutlink.href = "javascript:signOut()";
+            }
+        }
+
+
+        // Clicking on logo will send you back to home page
+        let logo = document.getElementById("logoname");
+
+        logo.addEventListener('click', () => {
+            window.location = "/index.html";
+        })
+
+        // Add sign out functionality to sign-out-button
+        const sign_out = document.getElementById("sign-out-button");
+
+        sign_out.addEventListener("click", () => {
+            signOut()
+        })
+
+
+    </script>
+
+</body>
+
+</html>
