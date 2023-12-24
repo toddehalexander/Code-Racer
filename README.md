@@ -1,5 +1,8 @@
 # CodeRacer
 
+<img src="Screenshots/CodeRacer.png" alt="CodeRacer" style="margin-right: 10px;">
+
+
 CodeRacer is a web-based game designed for programmers who enjoy improving their typing speed and accuracy while learning about popular programming algorithms. Track your progress, customize your experience, and compete on the leaderboard to become the ultimate Code Racer.
 
 ## Introduction
