@@ -2,7 +2,7 @@
 
 <img src="Screenshots/CodeRacer.png" alt="CodeRacer" style="margin-right: 10px;">
 
-CodeRacer is a multiplayer online coding game where players race against each other to solve coding challenges. Track your progress, customize your experience, and compete on the leaderboard to become the ultimate Code Racer.
+CodeRacer is an online coding game where players race against each other to type different algorithms. Track your progress, customize your experience, and compete on the leaderboard to become the ultimate Code Racer.
 
 ## Introduction
 
