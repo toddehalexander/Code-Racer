@@ -1,4 +1,4 @@
-# [[CodeRacer](https://toddehalexander.github.io/CodeRacer/)](https://toddehalexander.github.io/CodeRacer/)
+# [[CodeRacer] (https://toddehalexander.github.io/CodeRacer/)](https://toddehalexander.github.io/CodeRacer/)
 
 <img src="Screenshots/CodeRacer.png" alt="CodeRacer" style="margin-right: 10px;">
 
